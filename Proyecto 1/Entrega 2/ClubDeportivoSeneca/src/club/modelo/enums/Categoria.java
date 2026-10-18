@@ -17,4 +17,13 @@ public enum Categoria{
 	public boolean corresponde(int edad) {
         return edad >= edadMin && edad <= edadMax;
     }
+	
+	public static Categoria paraEdad(int edad) {
+	    for (Categoria c : Categoria.values()) {
+	        if (c.corresponde(edad)) {
+	            return c;
+	        }
+	    }
+	    return null;
+	}
 }

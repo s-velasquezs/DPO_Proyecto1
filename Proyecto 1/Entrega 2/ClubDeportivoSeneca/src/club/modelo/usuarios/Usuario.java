@@ -17,5 +17,12 @@ public abstract class Usuario {
         return username == user && password == pass;
     }
     
+    public boolean cambiarPassword(String actual, String nueva) {
+        if (!password.equals(actual) || nueva == null || nueva.isBlank()) {
+            return false;
+        }
+        this.password = nueva;
+        return true;
+    }	
 
 }
